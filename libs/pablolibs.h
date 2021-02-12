@@ -109,7 +109,7 @@ void presionaTecla ( void ) {
 //Agrupo las funciones de inicializacion de ncurses.
 void ncurses_init() {
     if ( ( initscr() ) == NULL ) { //Si la terminal detectada no esta en termcap, cancela.
-        msgError ( "ncurses_init", "No hay memoria suficiente" );
+        msgError ( "ncurses_init", "Terminal no detectada." );
         exit ( EXIT_FAILURE );
     }
 
