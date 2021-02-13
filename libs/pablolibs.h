@@ -1,5 +1,5 @@
 /*
-Mis funciones.
+  Mis funciones.
 
  20140308 - PSRN - Version Inicial.
  20140309 - PSRN - Incorporo ncurses.
@@ -8,8 +8,8 @@ Mis funciones.
 
 #define TITULO_SISTEMA "Sistema de Gestion para Cines"
 #define VERSION_SISTEMA "V1.0"
-#define UNIVERSIDAD "Universidad de Palermo"
-#define MATERIA "Estructura de Datos"
+#define TITULO2 "Cine Fantasy"
+#define SUBTITULO2 "Av. Cabildo 685"
 
 #include <ncursesw/curses.h>
 #include <ncursesw/menu.h>
@@ -65,8 +65,8 @@ WINDOW * abrirVentana ( int fila, int col, int ancho , int largo, char * titulo 
 }
 
 void limpiar_terminal ( char titulo[40], char subtitulo[40] ) {
-    static const char titulo2[] = UNIVERSIDAD;
-    static const char subtitulo2[] = MATERIA;
+    static const char titulo2[] = TITULO2;
+    static const char subtitulo2[] = SUBTITULO2;
 
     //Defino los pares de colores
     init_pair ( 1, COLOR_YELLOW, COLOR_BLUE );  //Pantalla

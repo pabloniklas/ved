@@ -52,15 +52,9 @@ void creditos() {
     v = abrirVentana ( 4, 10, 50, 15, "Creditos" );
 
     mvwprintw ( v, r++, c, TITULO_SISTEMA );
-    mvwprintw ( v, r++, c, "Alumno: Pablo Niklas." );
+    mvwprintw ( v, r++, c, "Autor: Pablo Niklas." );
     r++;
     mvwhline ( v, r++, 1, ACS_HLINE, 49 );
-    r++;
-    mvwprintw ( v, r++, c, "Docente: Fabiana DAIAN." );
-    mvwprintw ( v, r++, c, "Ayudante: Adrian." );
-    r++;
-    mvwprintw ( v, r++, c, MATERIA );
-    mvwprintw ( v, r++, c, UNIVERSIDAD );
     wrefresh ( v );
 
     presionaTecla();

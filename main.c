@@ -1,7 +1,7 @@
 /*
-Modulo Principal.
+  Modulo Principal.
 
- Utiliza las librerias ncurses, las cuales se obtienen de:
+   Utiliza las librerias ncurses, las cuales se obtienen de:
    ftp://invisible-island.net/ncurses/win32/mingw32-20140308.zip
    Descomprimir y copiar en: "C:\Program Files (x86)\CodeBlocks\MinGW"
 
@@ -36,20 +36,25 @@ int main() {
     };
 
     char * opciones_administrador[] = {
-            "Informe completo de salas y pel�culas",
+            "Informe completo de salas y peliculas",
             "Listar los usuarios del sistema",
             "Procesar la cola de compra y la pila de reserva de entradas",
-            "Agregar pel�culas en una determinada sala",
-            "Eliminar aquellas pel�culas que no tienen ventas de entradas",
+            "Agregar peliculas en una determinada sala",
+            "Eliminar aquellas peliculas que no tienen ventas de entradas",
             "Volver"
     };
 
     char * opciones_usuario_registrado[] = {
-            "Reservar entrada", "Comprar entrada", "Consultar las pel�culas de cada sala y la disponibilidad de asientos", "Volver"
+            "Reservar entrada",
+            "Comprar entrada",
+            "Consultar las peliculas de cada sala y la disponibilidad de asientos",
+            "Volver"
     };
 
     char * opciones_usuario_noregistrado[] = {
-            "Comprar entrada", "Consultar las peliculas de cada sala y la disponibilidad de asientos", "Volver"
+            "Comprar entrada",
+            "Consultar las peliculas de cada sala y la disponibilidad de asientos",
+            "Volver"
     };
 
     ncurses_init();
@@ -179,7 +184,7 @@ int main() {
 
     ncurses_terminate();
     printf ( "Ejecucion terminada.\n" );
-    printf ( "(c) 2014 by PN Software para UP.\n" );
+    printf ( "(c) 2021 by pN S0f7w4r3.\n" );
     printf ( "--------------------------------------------------------------------------------\n" );
 
     return EXIT_SUCCESS;
