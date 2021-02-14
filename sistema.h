@@ -62,7 +62,7 @@ void creditos() {
 }
 
 /*
-   Funcion int menu(opciones).
+   Funcion int menuVertical(opciones).
 
    Referencias consultadas:
 
@@ -75,7 +75,7 @@ void creditos() {
    TODO: Calculo de las coordenadas.
 */
 
-int menu ( int cant_opciones, char * opciones[] ) {
+int menuVertical (int cant_opciones, char **opciones) {
 
     WINDOW * ventana_menu;
 
@@ -95,14 +95,14 @@ int menu ( int cant_opciones, char * opciones[] ) {
     xx = cant_opciones + ( padding * 2 );
     yy = maslargo + ( padding * 2 ) + 3;
 
-    ///Creo la ventana asociada al menu
+    ///Creo la ventana asociada al menuVertical
     ventana_menu = abrirVentana ( x, y, yy, xx, "Menu de opciones" );
 
     ///Permite interpretar pulsaciones de tecla.
     //keypad ( ventana_menu, TRUE );
     //curs_set ( 0 );
 
-    ///Creo el menu y establecer el formato.
+    ///Creo el menuVertical y establecer el formato.
     for ( i = 1; i <= cant_opciones; i++ )  {
         mvwprintw ( ventana_menu, padding + i - 1, padding, "%d - %s.", i, opciones[i - 1] );
     }

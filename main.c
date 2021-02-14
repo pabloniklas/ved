@@ -30,7 +30,7 @@
 int main() {
     int opcion = 0, opcion_usuario = 0, opcion_administrador = 0;
 
-    //Creo el menu.
+    //Creo el menuVertical.
     char * opciones_iniciales[] = {
             "Usuario registrado", "Usuario no registrado", "Administrador", "Creditos", "Salir"
     };
@@ -62,14 +62,14 @@ int main() {
 
     do {
         msgStatus ( "Menu general del sistema." );
-        opcion = menu ( 5, opciones_iniciales );
+        opcion = menuVertical(5, opciones_iniciales);
 
         switch ( opcion ) {
 
             case 1:
                 do {
                     msgStatus ( "Menu de usuario registrado." );
-                    opcion_usuario = menu ( 4, opciones_usuario_registrado );
+                    opcion_usuario = menuVertical(4, opciones_usuario_registrado);
 
                     switch ( opcion_usuario ) {
 
@@ -102,7 +102,7 @@ int main() {
             case 2:
                 do {
                     msgStatus ( "Menu de usuario NO registrado." );
-                    opcion_usuario = menu ( 3, opciones_usuario_noregistrado );
+                    opcion_usuario = menuVertical(3, opciones_usuario_noregistrado);
 
                     switch ( opcion_usuario ) {
 
@@ -127,7 +127,7 @@ int main() {
             case 3:
                 do {
                     msgStatus ( "Menu de administrador." );
-                    opcion_administrador = menu ( 6, opciones_administrador );
+                    opcion_administrador = menuVertical(6, opciones_administrador);
 
                     switch ( opcion_administrador )
 
