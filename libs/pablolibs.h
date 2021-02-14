@@ -46,6 +46,10 @@ WINDOW * abrirVentana ( int fila, int col, int ancho , int largo, char * titulo 
     }
 
     wbkgd ( v, COLOR_PAIR ( 2 ) );
+    werase(v);
+    wbkgdset( v,' ');
+    wbkgd ( v, COLOR_PAIR ( 2 ) );
+
 
     //Adorno el titulo
     strcpy ( t, "[ " );
@@ -74,6 +78,9 @@ void limpiar_terminal ( char titulo[40], char subtitulo[40] ) {
     init_pair ( 3, COLOR_RED, COLOR_WHITE );    //Para ventanas titulo
 
     //Activo la definicion
+    bkgd ( COLOR_PAIR ( 1 ) );
+    erase();
+    bkgdset( ' ');
     bkgd ( COLOR_PAIR ( 1 ) );
 
     //Cabecera de todas las pantallas.
