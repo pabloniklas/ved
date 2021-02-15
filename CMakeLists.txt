@@ -9,4 +9,5 @@ link_directories(/usr/local/Cellar/ncurses/6.2/lib/)
 
 link_libraries(ncursesw)
 
-add_executable(main main.c libs/pablolibs.h)
+add_executable(ved ved.c libs/tui.h libs/menu.h)
+#add_executable(menuejemplo menuejemplo.c libs/menu.h)

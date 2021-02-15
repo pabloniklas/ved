@@ -20,9 +20,10 @@
 #include <ncursesw/curses.h>
 #include <ncursesw/menu.h>
 
-#include "libs/pablolibs.h"
+#include "libs/tui.h"
 
 #include "sistema.h"
+
 /*#include "listas.h"
 #include "pilasycolas.h"
 */
@@ -31,11 +32,11 @@ int main() {
     int opcion = 0, opcion_usuario = 0, opcion_administrador = 0;
 
     //Creo el menuVertical.
-    char * opciones_iniciales[] = {
+    char *opciones_iniciales[] = {
             "Usuario registrado", "Usuario no registrado", "Administrador", "Creditos", "Salir"
     };
 
-    char * opciones_administrador[] = {
+    char *opciones_administrador[] = {
             "Informe completo de salas y peliculas",
             "Listar los usuarios del sistema",
             "Procesar la cola de compra y la pila de reserva de entradas",
@@ -44,34 +45,34 @@ int main() {
             "Volver"
     };
 
-    char * opciones_usuario_registrado[] = {
+    char *opciones_usuario_registrado[] = {
             "Reservar entrada",
             "Comprar entrada",
             "Consultar las peliculas de cada sala y la disponibilidad de asientos",
             "Volver"
     };
 
-    char * opciones_usuario_noregistrado[] = {
+    char *opciones_usuario_noregistrado[] = {
             "Comprar entrada",
             "Consultar las peliculas de cada sala y la disponibilidad de asientos",
             "Volver"
     };
 
     ncurses_init();
-    limpiar_terminal ( TITULO_SISTEMA, VERSION_SISTEMA );
+    limpiar_terminal(TITULO_SISTEMA, VERSION_SISTEMA);
 
     do {
-        msgStatus ( "Menu general del sistema." );
+        msgStatus("Menu general del sistema.");
         opcion = menuVertical(5, opciones_iniciales);
 
-        switch ( opcion ) {
+        switch (opcion) {
 
             case 1:
                 do {
-                    msgStatus ( "Menu de usuario registrado." );
+                    msgStatus("Menu de usuario registrado.");
                     opcion_usuario = menuVertical(4, opciones_usuario_registrado);
 
-                    switch ( opcion_usuario ) {
+                    switch (opcion_usuario) {
 
                         case 1:
                             ///Reservar entradas.
@@ -93,7 +94,7 @@ int main() {
 
 
                     }
-                } while ( opcion_usuario != 4 );
+                } while (opcion_usuario != 4);
 
                 break;
 
@@ -101,10 +102,10 @@ int main() {
                 ///Menu Usuario no registrado
             case 2:
                 do {
-                    msgStatus ( "Menu de usuario NO registrado." );
+                    msgStatus("Menu de usuario NO registrado.");
                     opcion_usuario = menuVertical(3, opciones_usuario_noregistrado);
 
-                    switch ( opcion_usuario ) {
+                    switch (opcion_usuario) {
 
                         case 1:
                             ///Comprar entradas.
@@ -119,19 +120,17 @@ int main() {
                             break;
 
                     }
-                } while ( opcion_usuario != 3 );
+                } while (opcion_usuario != 3);
 
                 break;
 
                 ///Menu Administrador
             case 3:
                 do {
-                    msgStatus ( "Menu de administrador." );
+                    msgStatus("Menu de administrador.");
                     opcion_administrador = menuVertical(6, opciones_administrador);
 
-                    switch ( opcion_administrador )
-
-                    {
+                    switch (opcion_administrador) {
 
                         case 1:
                             ///Informe completo de salas y peliculas (disponibles y no disponibles).
@@ -164,7 +163,7 @@ int main() {
                             break;
 
                     }
-                } while ( opcion_administrador != 6 );
+                } while (opcion_administrador != 6);
 
                 break;
 
@@ -174,7 +173,7 @@ int main() {
                 break;
 
         }
-    } while ( opcion != 5 );
+    } while (opcion != 5);
 
     ///volcadoArchivos();
     ///purgarListasSalasyPeliculas();
@@ -183,9 +182,9 @@ int main() {
     //presiona_tecla();
 
     ncurses_terminate();
-    printf ( "Ejecucion terminada.\n" );
-    printf ( "(c) 2021 by pN S0f7w4r3.\n" );
-    printf ( "--------------------------------------------------------------------------------\n" );
+    printf("Ejecucion terminada.\n");
+    printf("(c) 2021 by pN S0f7w4r3.\n");
+    printf("--------------------------------------------------------------------------------\n");
 
     return EXIT_SUCCESS;
 }

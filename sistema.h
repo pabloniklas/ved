@@ -54,7 +54,7 @@ void creditos() {
     mvwprintw ( v, r++, c, TITULO_SISTEMA );
     mvwprintw ( v, r++, c, "Autor: Pablo Niklas." );
     r++;
-    mvwhline ( v, r++, 1, ACS_HLINE, 49 );
+    mvwhline ( v, r++, 1, ACS_HLINE, 48 );
     wrefresh ( v );
 
     presionaTecla();
